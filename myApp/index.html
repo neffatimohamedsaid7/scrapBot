@@ -1,0 +1,40 @@
+<html ng-app = "myApp">
+   <head>
+      <title>Open Electron Button</title>
+   </head>
+   
+   <body ng-controller="MyController">
+      <h1>Hello please click the button below</h1>
+      
+      <div >
+         <button ng-click="openElectronApp()" >OPEN ELECTRON APP</button>
+      </div>  
+      <br/>
+      <form id="personForm">
+         <label for="name">Name:</label>
+         <input type="text" id="name" name="name" required><br><br>
+         
+         <label for="familyName">Family Name:</label>
+         <input type="text" id="familyName" name="familyName" required><br><br>
+
+         <label for="Age">Age:</label>
+         <input type="text" id="age" name="age" required><br><br>
+
+         <label for="Birthdate">Birthdate:</label>
+         <input type="text" id="birthdate" name="birthdate" required><br><br>
+
+         <label for="Citizenship">Citizenship:</label>
+         <input type="text" id="citizenship" name="Citizenship" required><br><br>
+
+         <label for="Natinonality">Natinonality:</label>
+         <input type="text" id="natinonality" name="Natinonality" required><br><br>
+         
+         
+     </form>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+      </script>
+      
+      <script src="./handleOpenElectronButton.js"></script>
+
+   </body>
+</html>
