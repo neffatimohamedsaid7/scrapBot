@@ -50,9 +50,18 @@ async function scrapeWikipedia(personName) {
         let citizenShip = await citizenShipElement.getText();
         result.citizenShip = citizenShip + "";
 
+        await driver.get('http://127.0.0.1:5500/myApp/index.html');
+
+        await driver.findElement(By.id('fullName')).sendKeys(result.fullName );
+        await driver.findElement(By.id('age')).sendKeys(result.age + " " );
+        await driver.findElement(By.id('birthplace')).sendKeys(result.birthPlace + " " );
+        await driver.findElement(By.id('citizenship')).sendKeys(result.citizenShip + " " );
+
+
+
         return result;
     } finally {
-        await driver.quit();
+        // await driver.quit();
     }
 }
 
@@ -64,6 +73,8 @@ if (require.main === module) {
     }
     const personName = `${name} ${familyName}`;
     scrapeWikipedia(personName).then(result => console.log(result)).catch(err => console.error(err));
+
+
 }
 
 module.exports = scrapeWikipedia;
